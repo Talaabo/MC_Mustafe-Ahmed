@@ -5,15 +5,80 @@
 //  Created by Owner on 2024-05-31.
 //
 
-import UIKit
+import SwiftUI
 
-class ViewController: UIViewController {
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+            ImpactDataView()
+                .tabItem {
+                    Image(systemName: "leaf")
+                    Text("Impact Data")
+                }
+
+            TipsView()
+                .tabItem {
+                    Image(systemName: "lightbulb")
+                    Text("Tips & Guides")
+                }
+
+            NewsView()
+                .tabItem {
+                    Image(systemName: "newspaper")
+                    Text("News")
+                }
+
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+        }
     }
+}
 
+struct HomeView: View {
+    var body: some View {
+        Text("Home")
+    }
+}
 
+struct ImpactDataView: View {
+    var body: some View {
+        Text("Impact Data")
+    }
+}
+
+struct TipsView: View {
+    var body: some View {
+        Text("Tips & Guides")
+    }
+}
+
+struct NewsView: View {
+    var body: some View {
+        Text("News")
+    }
+}
+
+struct ProfileView: View {
+    var body: some View {
+        Text("Profile")
+    }
+}
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
 }
 
